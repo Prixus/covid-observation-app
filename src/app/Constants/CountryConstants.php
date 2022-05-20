@@ -23,10 +23,18 @@ class CountryConstants extends BaseConstants
     /**
      * Attributes
      */
-    public const COUNTRY_NAME = 'country_name';
+    public const COUNTRY_NAME = 'countryregion';
 
     /**
      * Indexes
      */
     public const INDEX_FK_COUNTRY = 'ixnn_country__country_no';
+    public const INDEX_UNIQUE_COUNTRY_NAME = 'ixnu_country__country_name';
+
+    /**
+     * Database attributes
+     */
+    public const DB_ATTRIBUTES = [
+        self::COUNTRY_NAME
+    ];
 }

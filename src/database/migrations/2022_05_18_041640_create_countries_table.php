@@ -21,7 +21,12 @@ return new class extends Migration
     {
         Schema::create(CountryConstants::TABLE_NAME, function (Blueprint $table) {
             $table->bigIncrements(CountryConstants::PRIMARY_KEY);
-            $table->string(CountryConstants::COUNTRY_NAME);
+            $table->string(CountryConstants::COUNTRY_NAME)->nullable();
+
+            $table->unique(
+                CountryConstants::COUNTRY_NAME,
+                CountryConstants::INDEX_UNIQUE_COUNTRY_NAME
+            );
         });
     }
 

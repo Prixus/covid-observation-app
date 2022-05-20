@@ -24,9 +24,20 @@ class CovidReportConstants extends BaseConstants
     /**
      * Attribute Constants
      */
-    public const CONFIRMED_CASES = 'confirmed_cases';
+    public const CONFIRMED_CASES = 'confirmed';
     public const DEATHS = 'deaths';
     public const RECOVERED = 'recovered';
-    public const OBSERVATION_DATE = 'observation_date';
-    public const INS_LAST_UPDATE = 'ins_last_update';
+    public const OBSERVATION_DATE = 'observationdate';
+    public const INS_LAST_UPDATE = 'last_update';
+
+    /**
+     * Database Attributes
+     */
+    public const DB_ATTRIBUTES = [
+        self::CONFIRMED_CASES,
+        self::DEATHS,
+        self::RECOVERED,
+        self::OBSERVATION_DATE,
+        self::INS_LAST_UPDATE
+    ];
 }

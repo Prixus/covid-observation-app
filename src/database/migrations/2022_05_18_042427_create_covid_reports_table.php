@@ -29,7 +29,7 @@ return new class extends Migration
             $table->integer(CovidReportConstants::DEATHS);
             $table->integer(CovidReportConstants::RECOVERED);
             $table->date(CovidReportConstants::OBSERVATION_DATE);
-            $table->integer(CovidReportConstants::INS_LAST_UPDATE);
+            $table->timestamp(CovidReportConstants::INS_LAST_UPDATE);
 
             $table->foreign(CovidReportConstants::COUNTRY_NO, CountryConstants::INDEX_FK_COUNTRY)
                 ->references(CountryConstants::PRIMARY_KEY)

@@ -22,7 +22,12 @@ return new class extends Migration
     {
         Schema::create(ProvinceConstants::TABLE_NAME, function (Blueprint $table) {
             $table->bigIncrements(ProvinceConstants::PRIMARY_KEY);
-            $table->string(ProvinceConstants::PROVINCE_NAME);
+            $table->string(ProvinceConstants::PROVINCE_NAME)->nullable();
+
+            $table->unique(
+                ProvinceConstants::PROVINCE_NAME,
+                ProvinceConstants::INDEX_UNIQUE_PROVINCE_NAME
+            );
         });
     }
 

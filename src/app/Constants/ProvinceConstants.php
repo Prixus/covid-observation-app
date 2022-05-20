@@ -24,10 +24,18 @@ class ProvinceConstants
     /**
      * Attributes
      */
-    public const PROVINCE_NAME = 'province_name';
+    public const PROVINCE_NAME = 'provincestate';
 
     /**
      * Indexes
      */
     public const INDEX_FK_PROVINCE = 'ixnn_province__province_no';
+    public const INDEX_UNIQUE_PROVINCE_NAME = 'ixnu_province__province_no';
+
+    /**
+     * Database Attributes
+     */
+    public const DB_ATTRIBUTES = [
+        self::PROVINCE_NAME
+    ];
 }
