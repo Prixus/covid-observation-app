@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Constants\ProvinceConstants;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class ProvinceModel
@@ -11,7 +12,7 @@ use App\Constants\ProvinceConstants;
  * @author Simon Peter Calamno
  * @since 2022.05.18
  */
-class ProvinceModel
+class ProvinceModel extends Model
 {
     protected $table = ProvinceConstants::TABLE_NAME;
     protected $primaryKey = ProvinceConstants::PRIMARY_KEY;

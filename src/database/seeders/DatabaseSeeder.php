@@ -5,6 +5,13 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+/**
+ * Class DatabaseSeeder
+ *
+ * @package Database\Seeders
+ * @author Simon Peter Calamno
+ * @since 2022.05.19
+ */
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -14,11 +21,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $this->call(CovidReportSeeder::class);
     }
 }
