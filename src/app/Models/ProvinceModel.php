@@ -16,5 +16,5 @@ class ProvinceModel extends Model
 {
     protected $table = ProvinceConstants::TABLE_NAME;
     protected $primaryKey = ProvinceConstants::PRIMARY_KEY;
-    protected $timestamps = false;
+    public $timestamps = false;
 }

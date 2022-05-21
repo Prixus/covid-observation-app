@@ -16,5 +16,5 @@ class CovidReportModel extends Model
 {
     protected $table = CovidReportConstants::TABLE_NAME;
     protected $primaryKey = CovidReportConstants::PRIMARY_KEY;
-    protected $timestamps = false;
+    public $timestamps = false;
 }

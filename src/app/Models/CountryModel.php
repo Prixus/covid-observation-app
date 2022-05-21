@@ -16,5 +16,5 @@ class CountryModel extends Model
 {
     protected $table = CountryConstants::TABLE_NAME;
     protected $primaryKey = CountryConstants::PRIMARY_KEY;
-    protected $timestamps = false;
+    public $timestamps = false;
 }

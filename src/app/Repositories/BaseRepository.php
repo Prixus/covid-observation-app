@@ -2,8 +2,10 @@
 
 namespace App\Repositories;
 
+use App\Models\CountryModel;
+use App\Models\CovidReportModel;
+use App\Models\ProvinceModel;
 use Illuminate\Contracts\Database\Query\Builder;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 
 /**
@@ -77,6 +79,16 @@ abstract class BaseRepository
     }
 
     /**
+     * Truncates all the database tables
+     */
+    public function truncateDatabaseTables()
+    {
+        CountryModel::truncate();
+        CovidReportModel::truncate();
+        ProvinceModel::truncate();
+    }
+
+    /**
      * Setter for the BASE TABLE of the Repository
      * @param string $sTableName
      * @return $this
@@ -105,7 +117,7 @@ abstract class BaseRepository
      * @param string $sTableName
      * @return string
      */
-    protected function appendColumnNameToTableName(string $sColumnName, string $sTableName = null)
+    protected function appendColumnNameToTableName(string $sColumnName, string $sTableName = null): string
     {
         $sTableName = $sTableName ?? $this->sTableName;
         return $sTableName . '.' . $sColumnName;
@@ -126,7 +138,7 @@ abstract class BaseRepository
         string $sFirst,
         string $sSecond,
         ?string $sFirstTable = null
-    ) : Builder
+    ): Builder
     {
         return $oQueryBuilder->join(
             $sEmbedTable,
