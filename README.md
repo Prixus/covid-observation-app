@@ -29,3 +29,7 @@ This app uses docker for easier setup of dependencies ([Don't have docker yet? C
 ```
 docker-compose exec --user root php php /var/www/html/artisan migrate:fresh --seed
 ```
+7. To app is using localhost and port 8088. To access the app endpoint, please follow the sample link provided:
+```
+http://localhost:8088/top/confirmed?max_results=10&observation_date=2020-04-14
+```
