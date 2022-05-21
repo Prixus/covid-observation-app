@@ -36,8 +36,18 @@ class CovidReportsManagementService
      */
     private $oProvincesRepository;
 
+    /**
+     * @var CovidReportImport
+     */
     private $oCovidReportExcelImport;
 
+    /**
+     * CovidReportsManagementService constructor.
+     * @param CovidReportsRepository $oCovidReportsRepository
+     * @param CountriesRepository $oCountriesRepository
+     * @param ProvincesRepository $oProvincesRepository
+     * @param CovidReportImport $oCovidReportExcelImport
+     */
     public function __construct(
         CovidReportsRepository $oCovidReportsRepository,
         CountriesRepository $oCountriesRepository,
@@ -50,8 +60,12 @@ class CovidReportsManagementService
         $this->oCovidReportExcelImport = $oCovidReportExcelImport;
     }
 
+    /**
+     * Seeds the covid reports in the database
+     */
     public function seedCovidReports(): void
     {
+        $this->oCovidReportsRepository->truncateDatabaseTables();
         $aCovidReports = Excel::toArray(
             $this->oCovidReportExcelImport,
             base_path('database/data/covid_19_data.csv')

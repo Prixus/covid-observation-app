@@ -2,6 +2,9 @@
 
 namespace App\Repositories;
 
+use App\Models\CountryModel;
+use App\Models\CovidReportModel;
+use App\Models\ProvinceModel;
 use Illuminate\Contracts\Database\Query\Builder;
 use Illuminate\Support\Facades\DB;
 
@@ -73,6 +76,16 @@ abstract class BaseRepository
             ->first();
 
         return (int) $oUpdatedCreatedRecord->{$this->sPrimaryKey};
+    }
+
+    /**
+     * Truncates all the database tables
+     */
+    public function truncateDatabaseTables()
+    {
+        CountryModel::truncate();
+        CovidReportModel::truncate();
+        ProvinceModel::truncate();
     }
 
     /**
