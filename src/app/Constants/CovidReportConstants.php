@@ -40,4 +40,9 @@ class CovidReportConstants extends BaseConstants
         self::OBSERVATION_DATE,
         self::INS_LAST_UPDATE
     ];
+
+    /**
+     * Resource fields
+     */
+    public const OBSERVATION_DATE_FIELD = 'observation_date';
 }

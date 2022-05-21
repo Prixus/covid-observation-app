@@ -3,7 +3,6 @@
 namespace App\Repositories;
 
 use Illuminate\Contracts\Database\Query\Builder;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 
 /**
@@ -105,7 +104,7 @@ abstract class BaseRepository
      * @param string $sTableName
      * @return string
      */
-    protected function appendColumnNameToTableName(string $sColumnName, string $sTableName = null)
+    protected function appendColumnNameToTableName(string $sColumnName, string $sTableName = null): string
     {
         $sTableName = $sTableName ?? $this->sTableName;
         return $sTableName . '.' . $sColumnName;

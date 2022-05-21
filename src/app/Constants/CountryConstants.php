@@ -16,7 +16,7 @@ class CountryConstants extends BaseConstants
     public const TABLE_NAME = 't_country';
 
     /**
-     * Primary Key
+     * Primary key
      */
     public const PRIMARY_KEY = 'country_no';
 
@@ -37,4 +37,9 @@ class CountryConstants extends BaseConstants
     public const DB_ATTRIBUTES = [
         self::COUNTRY_NAME
     ];
+
+    /**
+     * Custom field name
+     */
+    public const COUNTRY_NAME_FIELD = 'country';
 }
