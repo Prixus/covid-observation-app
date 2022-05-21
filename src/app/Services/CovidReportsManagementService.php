@@ -83,4 +83,18 @@ class CovidReportsManagementService
             $this->oCovidReportsRepository->saveData($aCovidReportDetail);
         }
     }
+
+    /**
+     * Generates the Total Confirmed Cases
+     * @param array $aSearchParameters
+     * @return array
+     */
+    public function getTotalConfirmedCases(array $aSearchParameters): array
+    {
+        return $this->oCovidReportsRepository
+            ->getTopConfirmedCasesByCountry(
+                Arr::get($aSearchParameters, CovidReportConstants::OBSERVATION_DATE_FIELD),
+                Arr::get($aSearchParameters, CovidReportConstants::MAX_RESULTS)
+            );
+    }
 }

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Constants\CovidReportConstants;
 use App\Http\Requests\FetchTopConfirmedCasesRequest;
+use App\Http\Resources\TopConfirmedResource;
 use App\Services\CovidReportsManagementService;
 
 /**
@@ -28,9 +30,17 @@ class CovidReportsManagementController extends Controller
         $this->oCovidReportsManagementService = $oCovidReportsManagementService;
     }
 
-    public function fetchTopConfirmedCases(FetchTopConfirmedCasesRequest $oFetchTopConfirmedCasesRequest)
+    /**
+     * Fetches the countries with top confirmed cases
+     * @param FetchTopConfirmedCasesRequest $oFetchTopConfirmedCasesRequest
+     * @return TopConfirmedResource
+     */
+    public function fetchTopConfirmedCases(FetchTopConfirmedCasesRequest $oFetchTopConfirmedCasesRequest): TopConfirmedResource
     {
         $aValidatedData = $oFetchTopConfirmedCasesRequest->validated();
-        return $aValidatedData;
+        return new TopConfirmedResource(
+            $this->oCovidReportsManagementService->getTotalConfirmedCases($aValidatedData),
+            $aValidatedData[CovidReportConstants::OBSERVATION_DATE_FIELD]
+        );
     }
 }

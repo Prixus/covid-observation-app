@@ -138,7 +138,7 @@ abstract class BaseRepository
         string $sFirst,
         string $sSecond,
         ?string $sFirstTable = null
-    ) : Builder
+    ): Builder
     {
         return $oQueryBuilder->join(
             $sEmbedTable,

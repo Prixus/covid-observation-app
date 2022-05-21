@@ -39,7 +39,8 @@ class CountryConstants extends BaseConstants
     ];
 
     /**
-     * Custom field name
+     * Custom field names
      */
     public const COUNTRY_NAME_FIELD = 'country';
+    public const COUNTRIES_FIELD = 'countries';
 }
