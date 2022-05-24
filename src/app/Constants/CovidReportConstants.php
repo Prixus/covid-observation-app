@@ -14,7 +14,7 @@ class CovidReportConstants extends BaseConstants
     /**
      * Table name constant
      */
-    public const TABLE_NAME = 't_covid_reports';
+    public const TABLE_NAME = 'covid_observations';
 
     /**
      * Primary Constant

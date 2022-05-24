@@ -13,7 +13,7 @@ class CountryConstants extends BaseConstants
     /**
      * Table name
      */
-    public const TABLE_NAME = 't_country';
+    public const TABLE_NAME = 'countries';
 
     /**
      * Primary Key

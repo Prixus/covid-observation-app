@@ -14,7 +14,7 @@ class ProvinceConstants
     /**
      * Table name
      */
-    public const TABLE_NAME = 't_province';
+    public const TABLE_NAME = 'provinces';
 
     /**
      * Primary Key
