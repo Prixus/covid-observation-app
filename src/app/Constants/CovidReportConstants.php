@@ -29,6 +29,9 @@ class CovidReportConstants extends BaseConstants
     public const RECOVERED = 'recovered';
     public const OBSERVATION_DATE = 'observationdate';
     public const INS_LAST_UPDATE = 'last_update';
+    public const CONFIRMED_CASES_BY_COUNTRY = 'confirmed_by_country';
+    public const DEATHS_BY_COUNTRY = 'deaths_by_country';
+    public const RECOVERED_BY_COUNTRY = 'recovered_by_country';
 
     /**
      * Database Attributes
@@ -40,4 +43,9 @@ class CovidReportConstants extends BaseConstants
         self::OBSERVATION_DATE,
         self::INS_LAST_UPDATE
     ];
+
+    /**
+     * Resource fields
+     */
+    public const OBSERVATION_DATE_FIELD = 'observation_date';
 }
